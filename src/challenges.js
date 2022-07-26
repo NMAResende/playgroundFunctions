@@ -43,14 +43,21 @@ function concatName(arrayObject) {
 
   return lastItem + ', ' + firstItem;
 }
-console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']))
-console.log(concatName(['foguete', 'não', 'tem', 'ré']))
-console.log(concatName(['captain', 'my', 'captain']))
+console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
+console.log(concatName(['foguete', 'não', 'tem', 'ré']));
+console.log(concatName(['captain', 'my', 'captain']));
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let sumWins = wins * 3;
+  let sumTies = ties * 1;
+  let total = sumWins + sumTies;
+  return total;
 }
+console.log(footballPoints(14, 8));
+console.log(footballPoints(1, 2));
+console.log(footballPoints(0, 0));
+
 
 // Desafio 6
 function highestCount() {
