@@ -1,7 +1,20 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
-}
+function compareTrue(value1, value2) {
+  const favoriteFruit = 'amora';
+  const favoriteFruitSecond = 'morango';
+  const doNotLikeFruit = 'manga';
+  
+  if(value1 === 'amora' && value2 === 'morango'){
+   return true;
+  }else if (value1 === 'amora' && value2 === 'manga'){
+    return false;
+  }else if (value1 === 'morango' && value2 === 'manga'){
+    return false;
+  }
+  }
+  console.log(compareTrue('amora', 'morango'));
+  console.log(compareTrue('amora', 'manga'));
+
 
 // Desafio 2
 function calcArea() {
