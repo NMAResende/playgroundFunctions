@@ -36,11 +36,16 @@ function splitSentence(string) {
   console.log(splitSentence('foguete'));
   
 
-
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(arrayObject) {
+  let lastItem = arrayObject[arrayObject.length - 1];
+  let firstItem = arrayObject[0];
+
+  return lastItem + ', ' + firstItem;
 }
+console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']))
+console.log(concatName(['foguete', 'não', 'tem', 'ré']))
+console.log(concatName(['captain', 'my', 'captain']))
 
 // Desafio 5
 function footballPoints() {
