@@ -120,16 +120,62 @@ console.log(fizzBuzz([7, 9]));
 console.log(fizzBuzz([9, 25]));
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  for(let i = 0; i < string.length; i+=1){
+    if(string[i] === 'a'){
+     string = string.replace('a',1);
+    }
+    else if(string[i] === 'e'){
+      string = string.replace('e',2);
+    }
+    else if(string[i] === 'i'){
+      string = string.replace('i',3);
+    }
+    else if(string[i] === 'o'){
+      string = string.replace('o',4);
+    }
+    else if(string[i] === 'u'){
+      string = string.replace('u',5);
+    }
+  }
+  return string;
 }
-function decode() {
-  // seu código aqui
-}
+console.log(encode('hello'));
+console.log(encode('How are you today?'));
+console.log(encode('This is an encoding test.'));
+console.log(encode('go Trybe!'));
+
+function decode(string) {
+  for(let i = 0; i < string.length; i+=1){
+    if(string[i] === '1'){
+     string = string.replace('1', 'a');
+    }
+    else if(string[i] === '2'){
+      string = string.replace('2', 'e');
+    }
+    else if(string[i] === '3'){
+      string = string.replace('3', 'i');
+    }
+    else if(string[i] === '4'){
+      string = string.replace('4', 'o');
+    }
+    else if(string[i] === '5'){
+      string = string.replace('5', 'u');
+    }
+  }
+  return string;
+ }
+
+
+console.log(decode('h2ll4'));
+console.log(decode('H4w 1r2 y45 t4d1y?'));
+console.log(decode('Th3s 3s 1n 2nc4d3ng t2st.'));
+console.log(decode('g4 Tryb2!'));
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(arrayTec, stringName) {
+  
+  for (let i = 0; i < arrayTec.length; i += 1) {}
 }
 
 module.exports = {
