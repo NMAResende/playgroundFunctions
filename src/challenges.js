@@ -34,8 +34,8 @@ console.log(splitSentence('foguete'));
 function concatName(arrayObject) {
   let lastItem = arrayObject[arrayObject.length - 1];
   let firstItem = arrayObject[0];
-
-  return lastItem + ', ' + firstItem;
+  
+  return lastItem.concat(', ', firstItem)
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 console.log(concatName(['foguete', 'não', 'tem', 'ré']));
@@ -77,14 +77,10 @@ console.log(highestCount([0, 0, 0]));
 function catAndMouse(mouse, cat1, cat2) {
   if (cat1 > cat2) {
     return 'cat2';
-  }
-  else if (cat1 < cat2) {
+  } else if (cat1 < cat2) {
     return 'cat1';
-  }
-  else if (cat1 === cat2) {
-    mouse = 'os gatos trombam e o rato foge';
-    return mouse;
-
+  } else if (cat1 === cat2) {
+    return 'os gatos trombam e o rato foge';
   }
 }
 console.log(catAndMouse(1, 3, 2));
@@ -95,7 +91,6 @@ console.log(catAndMouse(1, 8, 8));
 function fizzBuzz(array) {
   let returnArray = [];
   for (let i = 0; i < array.length; i += 1) {
-
     if (array[i] % 3 === 0 && array[i] % 5 === 0) {
       returnArray[i] = 'fizzbuzz'
     } else if (array[i] % 3 === 0) {
@@ -117,17 +112,13 @@ function encode(string) {
   for (let i = 0; i < string.length; i += 1) {
     if (string[i] === 'a') {
       string = string.replace('a', 1);
-    }
-    else if (string[i] === 'e') {
+    } else if (string[i] === 'e') {
       string = string.replace('e', 2);
-    }
-    else if (string[i] === 'i') {
+    } else if (string[i] === 'i') {
       string = string.replace('i', 3);
-    }
-    else if (string[i] === 'o') {
+    } else if (string[i] === 'o') {
       string = string.replace('o', 4);
-    }
-    else if (string[i] === 'u') {
+    } else if (string[i] === 'u') {
       string = string.replace('u', 5);
     }
   }
@@ -142,17 +133,13 @@ function decode(string) {
   for (let i = 0; i < string.length; i += 1) {
     if (string[i] === '1') {
       string = string.replace('1', 'a');
-    }
-    else if (string[i] === '2') {
+    } else if (string[i] === '2') {
       string = string.replace('2', 'e');
-    }
-    else if (string[i] === '3') {
+    } else if (string[i] === '3') {
       string = string.replace('3', 'i');
-    }
-    else if (string[i] === '4') {
+    } else if (string[i] === '4') {
       string = string.replace('4', 'o');
-    }
-    else if (string[i] === '5') {
+    } else if (string[i] === '5') {
       string = string.replace('5', 'u');
     }
   }
