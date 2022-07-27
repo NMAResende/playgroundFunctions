@@ -165,7 +165,7 @@ function techList(arrayTec, stringName) {
 
     lista.push(nemObj);
   }
-  lista = lista.sort(function (a,b){
+  lista = lista.sort(function (a, b) {
     return ('' + a.tech).localeCompare(b.tech);
   });
   return lista;
