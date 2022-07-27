@@ -34,7 +34,7 @@ console.log(splitSentence('foguete'));
 function concatName(arrayObject) {
   let lastItem = arrayObject[arrayObject.length - 1];
   let firstItem = arrayObject[0];
-  
+
   return lastItem.concat(', ', firstItem)
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
@@ -77,12 +77,13 @@ console.log(highestCount([0, 0, 0]));
 function catAndMouse(mouse, cat1, cat2) {
   if (cat1 > cat2) {
     return 'cat2';
-  } else if (cat1 < cat2) {
+  } else if (cat1 < cat2 && cat1 != 0) {
     return 'cat1';
-  } else if (cat1 === cat2) {
-    return 'os gatos trombam e o rato foge';
   }
+  return 'os gatos trombam e o rato foge';
+
 }
+console.log(catAndMouse(1, 0, 2));
 console.log(catAndMouse(1, 3, 2));
 console.log(catAndMouse(1, 6, 12));
 console.log(catAndMouse(1, 8, 8));
@@ -92,7 +93,7 @@ function fizzBuzz(array) {
   let returnArray = [];
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] % 3 === 0 && array[i] % 5 === 0) {
-      returnArray[i] = 'fizzbuzz'
+      returnArray[i] = 'fizzBuzz'
     } else if (array[i] % 3 === 0) {
       returnArray[i] = 'fizz';
     } else if (array[i] % 5 === 0) {
