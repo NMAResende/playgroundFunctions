@@ -152,12 +152,12 @@ console.log(decode('g4 Tryb2!'));
 
 // Desafio 10
 function techList(arrayTec, stringName) {
-  if ((arrayTec === [] || arrayTec === undefined) || (stringName === '' || stringName === undefined)) {
+  if ((arrayTec === [] || arrayTec === undefined || arrayTec.length === 0) || (stringName === '' || stringName === undefined)) {
     return 'Vazio!'
   }
 
   let lista = [];
-  for (let i = 0; i <= arrayTec.length; i += 1) {
+  for (let i = 0; i < arrayTec.length; i += 1) {
     let nemObj = {
       tech: arrayTec[i],
       name: stringName
@@ -165,10 +165,12 @@ function techList(arrayTec, stringName) {
 
     lista.push(nemObj);
   }
+  lista = lista.sort(function (a,b){
+    return ('' + a.tech).localeCompare(b.tech);
+  });
   return lista;
 
 }
-console.log(techList([], 'Lucas'))
 console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'))
 
 module.exports = {
