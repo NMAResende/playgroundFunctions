@@ -174,9 +174,23 @@ console.log(decode('g4 Tryb2!'));
 
 // Desafio 10
 function techList(arrayTec, stringName) {
-  
-  for (let i = 0; i < arrayTec.length; i += 1) {}
+  if(arrayTec === [] || stringName === ''){
+    return 'Vazio!'
+  }
+
+  let lista = [];
+for(let i = 0; i< arrayTec.length; i+=1){
+    let nemObj = {
+      tech: arrayTec[i],
+      name: stringName
+    }
+
+    lista.push(nemObj);
 }
+return lista;
+
+}
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'))
 
 module.exports = {
   calcArea,
