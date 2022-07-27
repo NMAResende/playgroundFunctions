@@ -2,18 +2,15 @@
 function compareTrue(valueA, valueB) {
   if (valueA === 'amora' && valueB === 'morango') {
     return true;
-  }
-  else if (valueA === 'amora' && valueB === 'manga') {
+  } else if (valueA === 'amora' && valueB === 'manga') {
     return false;
-  }
-  else {
+  } else {
     return false;
   }
 }
 console.log(compareTrue('amora', 'morango'));
 console.log(compareTrue('amora', 'manga'));
 console.log(compareTrue('manga', 'manga'));
-
 
 // Desafio 2
 function calcArea(base, height) {
@@ -24,16 +21,14 @@ console.log(calcArea(10, 50));
 console.log(calcArea(5, 2));
 console.log(calcArea(51, 1));
 
-
 // Desafio 3
 function splitSentence(string) {
-  let array = string.split(" ");
+  let array = string.split(' ');
   return array;
 }
 console.log(splitSentence('go Trybe'));
 console.log(splitSentence('vamo que vamo'));
 console.log(splitSentence('foguete'));
-
 
 // Desafio 4
 function concatName(arrayObject) {
@@ -56,7 +51,6 @@ function footballPoints(wins, ties) {
 console.log(footballPoints(14, 8));
 console.log(footballPoints(1, 2));
 console.log(footballPoints(0, 0));
-
 
 // Desafio 6
 function highestCount(arrayNumbers) {
@@ -164,7 +158,6 @@ function decode(string) {
   }
   return string;
 }
-
 
 console.log(decode('h2ll4'));
 console.log(decode('H4w 1r2 y45 t4d1y?'));
