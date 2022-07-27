@@ -2,7 +2,7 @@
 function compareTrue(valueA, valueB) {
   if (valueA && valueB) {
     return true;
-  } else if (!valueA || !valueB) {
+  } else {
     return false;
   }
 }
@@ -75,7 +75,7 @@ console.log(highestCount([0, 0, 0]));
 function catAndMouse(mouse, cat1, cat2) {
   if (cat1 > cat2) {
     return 'cat2';
-  } else if (cat1 < cat2 && cat1 != 0) {
+  } else if (cat1 < cat2 && cat1 !== 0) {
     return 'cat1';
   }
   return 'os gatos trombam e o rato foge';
@@ -152,7 +152,10 @@ console.log(decode('g4 Tryb2!'));
 
 // Desafio 10
 function techList(arrayTec, stringName) {
-  if ((arrayTec === [] || arrayTec === undefined || arrayTec.length === 0) || (stringName === '' || stringName === undefined)) {
+  if (arrayTec === [] || arrayTec === undefined || arrayTec.length === 0) {
+    return 'Vazio!'
+  }
+  if (stringName === '' || stringName === undefined) {
     return 'Vazio!'
   }
 
