@@ -1,13 +1,12 @@
 // Desafio 1
-function compareTrue(value1, value2) {
-  if (value1 === 'amora' && value2 === 'morango') {
+function compareTrue(valueA, valueB) {
+  if (valueA === 'amora' && valueB === 'morango') {
     return true;
   }
-  else if (value1 === 'amora' && value2 === 'manga') {
+  else if (valueA === 'amora' && valueB === 'manga') {
     return false;
-  } else if (value1 === 'morango' && value2 === 'manga') {
-    return false;
-  } else if (value1 === 'manga' && value2 === 'manga') {
+  }
+  else {
     return false;
   }
 }
