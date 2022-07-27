@@ -1,16 +1,14 @@
 // Desafio 1
 function compareTrue(valueA, valueB) {
-  if (valueA === 'amora' && valueB === 'morango') {
+  if (valueA && valueB) {
     return true;
-  } else if (valueA === 'amora' && valueB === 'manga') {
-    return false;
-  } else {
+  } else if (!valueA || !valueB) {
     return false;
   }
 }
-console.log(compareTrue('amora', 'morango'));
-console.log(compareTrue('amora', 'manga'));
-console.log(compareTrue('manga', 'manga'));
+console.log(compareTrue(true, false));
+console.log(compareTrue(true, true));
+console.log(compareTrue(false, false));
 
 // Desafio 2
 function calcArea(base, height) {
@@ -154,12 +152,12 @@ console.log(decode('g4 Tryb2!'));
 
 // Desafio 10
 function techList(arrayTec, stringName) {
-  if (arrayTec === [] || stringName === '') {
+  if ((arrayTec === [] || arrayTec === undefined) || (stringName === '' || stringName === undefined)) {
     return 'Vazio!'
   }
 
   let lista = [];
-  for (let i = 0; i < arrayTec.length; i += 1) {
+  for (let i = 0; i <= arrayTec.length; i += 1) {
     let nemObj = {
       tech: arrayTec[i],
       name: stringName
@@ -170,6 +168,7 @@ function techList(arrayTec, stringName) {
   return lista;
 
 }
+console.log(techList([], 'Lucas'))
 console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'))
 
 module.exports = {
