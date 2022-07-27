@@ -10,10 +10,13 @@ function compareTrue(value1, value2) {
     return false;
   }else if (value1 === 'morango' && value2 === 'manga'){
     return false;
+  }else if (value1 === 'manga' && value2 === 'manga'){
+    return false;
   }
   }
   console.log(compareTrue('amora', 'morango'));
   console.log(compareTrue('amora', 'manga'));
+  console.log(compareTrue('manga', 'manga'));
 
 
 // Desafio 2
