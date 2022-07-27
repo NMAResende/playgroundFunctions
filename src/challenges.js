@@ -1,8 +1,5 @@
 // Desafio 1
 function compareTrue(value1, value2) {
-  const favoriteFruit = 'amora';
-  const favoriteFruitSecond = 'morango';
-  const doNotLikeFruit = 'manga';
   
   if(value1 === 'amora' && value2 === 'morango'){
    return true;
