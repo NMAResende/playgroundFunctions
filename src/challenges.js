@@ -1,9 +1,9 @@
 // Desafio 1
 function compareTrue(valueA, valueB) {
   if (valueA && valueB) {
-    return true;
+  return true;
   }
-    return false;
+  return false;
 }
 console.log(compareTrue(true, false));
 console.log(compareTrue(true, true));
@@ -164,7 +164,7 @@ function techList(arrayTec, stringName) {
       name: stringName,
     }
     lista.push(nemObj);
-  }
+  };
   lista = lista.sort(function (a, b) {
     return ('' + a.tech).localeCompare(b.tech);
   });
