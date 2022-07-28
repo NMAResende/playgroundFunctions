@@ -33,7 +33,7 @@ function concatName(arrayObject) {
   let lastItem = arrayObject[arrayObject.length - 1];
   let firstItem = arrayObject[0];
 
-  return lastItem.concat(', ', firstItem)
+  return lastItem.concat(', ', firstItem);
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 console.log(concatName(['foguete', 'não', 'tem', 'ré']));
@@ -91,7 +91,7 @@ function fizzBuzz(array) {
   let returnArray = [];
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] % 3 === 0 && array[i] % 5 === 0) {
-      returnArray[i] = 'fizzBuzz'
+      returnArray[i] = 'fizzBuzz';
     } else if (array[i] % 3 === 0) {
       returnArray[i] = 'fizz';
     } else if (array[i] % 5 === 0) {
@@ -153,28 +153,25 @@ console.log(decode('g4 Tryb2!'));
 // Desafio 10
 function techList(arrayTec, stringName) {
   if (arrayTec === [] || arrayTec === undefined || arrayTec.length === 0) {
-    return 'Vazio!'
+    return 'Vazio!';
   }
   if (stringName === '' || stringName === undefined) {
-    return 'Vazio!'
+    return 'Vazio!';
   }
-
   let lista = [];
   for (let i = 0; i < arrayTec.length; i += 1) {
     let nemObj = {
       tech: arrayTec[i],
-      name: stringName
+      name: stringName,
     }
-
     lista.push(nemObj);
   }
   lista = lista.sort(function (a, b) {
     return ('' + a.tech).localeCompare(b.tech);
   });
   return lista;
-
 }
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'))
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 module.exports = {
   calcArea,
