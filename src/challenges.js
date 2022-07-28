@@ -2,9 +2,8 @@
 function compareTrue(valueA, valueB) {
   if (valueA && valueB) {
     return true;
-  } else {
-    return false;
   }
+    return false;
 }
 console.log(compareTrue(true, false));
 console.log(compareTrue(true, true));
@@ -80,7 +79,6 @@ function catAndMouse(mouse, cat1, cat2) {
     return 'cat1';
   }
   return 'os gatos trombam e o rato foge';
-
 }
 console.log(catAndMouse(1, 0, 2));
 console.log(catAndMouse(1, 3, 2));
