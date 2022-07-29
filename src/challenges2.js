@@ -1,13 +1,6 @@
 // Desafio 11
 function generatePhoneNumber(arrayNumbers) {
-
-arrayNumbers.splice(0, 0, '(');
-arrayNumbers.splice(3, 0, ')');
-arrayNumbers.splice(4, 0, ' ');
-arrayNumbers.splice(10, 0, '-');
-let texto =  arrayNumbers.join('');
-
-  if (arrayNumbers.length > 11) {
+  if (arrayNumbers.length !== 11) {
     return 'Array com tamanho incorreto.'
   }
   for (let i = 0; i < arrayNumbers.length; i += 1) {
@@ -16,7 +9,11 @@ let texto =  arrayNumbers.join('');
     }
   }
   let cont = 0;
-  let novoArray = arrayNumbers.sort(function (a, b) { return a - b });
+  let novoArray = [];
+  for (let i = 0; i < arrayNumbers.length; i += 1) {
+    novoArray[i] = arrayNumbers[i];
+  }
+  novoArray = novoArray.sort(function (a, b) { return a - b });
   let numeroRepetido = novoArray[0];
   for (let i = 0; i < novoArray.length; i += 1) {
     if (novoArray[i] == numeroRepetido) {
@@ -29,11 +26,14 @@ let texto =  arrayNumbers.join('');
       cont = 1;
     }
   }
-
+  arrayNumbers.splice(0, 0, '(');
+  arrayNumbers.splice(3, 0, ')');
+  arrayNumbers.splice(4, 0, ' ');
+  arrayNumbers.splice(10, 0, '-');
+  let texto = arrayNumbers.join('');
+  return texto;
 }
-
-console.log(generatePhoneNumber([1,2,3,4,5,6,7,8,9,0,1]))
-
+console.log(generatePhoneNumber([0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4]))
 
 // Desafio 12
 function triangleCheck() {
