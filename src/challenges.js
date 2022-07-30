@@ -74,7 +74,7 @@ console.log(highestCount([0, 0, 0]));
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   if (cat1 > cat2) {
-     return'cat2';
+    return 'cat2';
   } if (cat1 < cat2 && cat1 !== 0) {
     return 'cat1';
   }
@@ -89,15 +89,10 @@ console.log(catAndMouse(1, 8, 8));
 function fizzBuzz(array) {
   let returnArray = [];
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i] % 3 === 0 && array[i] % 5 === 0) {
-      returnArray[i] = 'fizzBuzz';
-    } else if (array[i] % 3 === 0) {
-      returnArray[i] = 'fizz';
-    } else if (array[i] % 5 === 0) {
-      returnArray[i] = 'buzz';
-    } else if (array[i] % 3 !== 0 && array[i] % 5 !== 0) {
-      returnArray[i] = 'bug!';
-    }
+    if (array[i] % 3 === 0 && array[i] % 5 === 0) returnArray[i] = 'fizzBuzz';
+     else if (array[i] % 3 === 0) returnArray[i] = 'fizz';
+     else if (array[i] % 5 === 0) returnArray[i] = 'buzz';
+     else if (array[i] % 3 !== 0 && array[i] % 5 !== 0) returnArray[i] = 'bug!';
   }
   return returnArray;
 }
