@@ -49,11 +49,11 @@ console.log(footballPoints(14, 8));
 console.log(footballPoints(1, 2));
 console.log(footballPoints(0, 0));
 
-// Desafio 
+// Desafio 6
 function highestCount(arrayNumbers) {
   let cont = 0;
   let maior = -999;
-  for (let index = 0; index < arrayNumbers.length; index+=1) {
+  for (let index = 0; index < arrayNumbers.length; index += 1) {
     if (maior <= arrayNumbers[index]) {
       if (maior === arrayNumbers[index]) {
         cont += 1;
@@ -66,8 +66,7 @@ function highestCount(arrayNumbers) {
   }
   return cont;
 }
-
-// console.log(highestCount([-2, -2, -2]));
+console.log(highestCount([-2, -2, -2]));
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 console.log(highestCount([0, 4, 4, 4, 9, 2, 1]));
 console.log(highestCount([0, 0, 0]));
