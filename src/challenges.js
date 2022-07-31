@@ -139,17 +139,20 @@ console.log(decode('Th3s 3s 1n 2nc4d3ng t2st.'));
 console.log(decode('g4 Tryb2!'));
 
 // Desafio 10
-function verificandoVazio(tech, name) {
+function verificandoVazio(tech) {
   if (tech === [] || tech === undefined || tech.length === 0) {
     return true;
   }
+  return false;
+}
+function verificandoVazio2 (name){
   if (name === '' || name === undefined) {
     return true;
   }
   return false;
 }
 function techList(arrayTec, stringName) {
-  if (verificandoVazio(arrayTec, stringName)) {
+  if (verificandoVazio(arrayTec) || verificandoVazio2(stringName)) {
     return 'Vazio!';
   }
   let lista = [];
