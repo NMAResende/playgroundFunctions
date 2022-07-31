@@ -94,59 +94,37 @@ console.log(catAndMouse(1, 6, 12));
 console.log(catAndMouse(1, 8, 8));
 
 // Desafio 8
+function verificarfizzBuzz(num, index) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    this.returnArray[index] = 'fizzBuzz';
+  } else if (num % 3 === 0) this.returnArray[index] = 'fizz';
+  else if (num % 5 === 0) this.returnArray[index] = 'buzz';
+  else this.returnArray[index] = 'bug!';
+}
+
 function fizzBuzz(array) {
-  let returnArray = [];
+  this.returnArray = [];
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i] % 3 === 0 && array[i] % 5 === 0) returnArray[i] = 'fizzBuzz';
-    else if (array[i] % 3 === 0) returnArray[i] = 'fizz';
-    else if (array[i] % 5 === 0) returnArray[i] = 'buzz';
-    else if (array[i] % 3 !== 0 && array[i] % 5 !== 0) returnArray[i] = 'bug!';
+    verificarfizzBuzz(array[i], i);
   }
-  return returnArray;
+  return this.returnArray;
 }
 console.log(fizzBuzz([2, 15, 7, 9, 45]));
 console.log(fizzBuzz([7, 9]));
 console.log(fizzBuzz([9, 25]));
 
 // Desafio 9
-function encode(string) {
-  for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === 'a') {
-      string = string.replace('a', 1);
-    } else if (string[i] === 'e') {
-      string = string.replace('e', 2);
-    } else if (string[i] === 'i') {
-      string = string.replace('i', 3);
-    } else if (string[i] === 'o') {
-      string = string.replace('o', 4);
-    } else if (string[i] === 'u') {
-      string = string.replace('u', 5);
-    }
-  }
-  return string;
+function encode(p) {
+  return p.replaceAll('a', 1).replaceAll('e', 2).replaceAll('i', 3).replaceAll('o', 4).replaceAll('u', 5);
 }
 console.log(encode('hello'));
 console.log(encode('How are you today?'));
 console.log(encode('This is an encoding test.'));
 console.log(encode('go Trybe!'));
 
-function decode(string) {
-  for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === '1') {
-      string = string.replace('1', 'a');
-    } else if (string[i] === '2') {
-      string = string.replace('2', 'e');
-    } else if (string[i] === '3') {
-      string = string.replace('3', 'i');
-    } else if (string[i] === '4') {
-      string = string.replace('4', 'o');
-    } else if (string[i] === '5') {
-      string = string.replace('5', 'u');
-    }
-  }
-  return string;
+function decode(p) {
+  return p.replaceAll(1, 'a').replaceAll(2, 'e').replaceAll(3, 'i').replaceAll(4, 'o').replaceAll(5, 'u');
 }
-
 console.log(decode('h2ll4'));
 console.log(decode('H4w 1r2 y45 t4d1y?'));
 console.log(decode('Th3s 3s 1n 2nc4d3ng t2st.'));
