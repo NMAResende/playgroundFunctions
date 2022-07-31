@@ -50,21 +50,29 @@ console.log(footballPoints(1, 2));
 console.log(footballPoints(0, 0));
 
 // Desafio 6
-function highestCount(arrayNumbers) {
-  let cont = 0;
-  let maior = -999;
-  for (let index = 0; index < arrayNumbers.length; index += 1) {
-    if (maior <= arrayNumbers[index]) {
-      if (maior === arrayNumbers[index]) {
-        cont += 1;
-        continue;
-      }
-      maior = arrayNumbers[index];
-      cont = 0;
-      cont += 1;
+function getNewObj() {
+  return {
+    cont: 0,
+    maior: -999
+  }
+}
+function validar(num) {
+  if (this.newObj.maior <= num) {
+    if (this.newObj.maior === num) {
+      this.newObj.cont += 1;
+    } else {
+      this.newObj.maior = num;
+      this.newObj.cont = 0;
+      this.newObj.cont += 1;
     }
   }
-  return cont;
+}
+function highestCount(arrayNumbers) {
+  this.newObj = getNewObj();
+  for (let index in arrayNumbers) {
+    validar(arrayNumbers[index]);
+  }
+  return this.newObj.cont;
 }
 console.log(highestCount([-2, -2, -2]));
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
