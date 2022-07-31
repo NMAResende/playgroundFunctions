@@ -53,8 +53,8 @@ console.log(footballPoints(0, 0));
 function getNewObj() {
   return {
     cont: 0,
-    maior: -999
-  }
+    maior: -999,
+  };
 }
 function validar(num) {
   if (this.newObj.maior <= num) {
@@ -69,7 +69,7 @@ function validar(num) {
 }
 function highestCount(arrayNumbers) {
   this.newObj = getNewObj();
-  for (let index in arrayNumbers) {
+  for (let index = 0; index <= arrayNumbers.length; index += 1) {
     validar(arrayNumbers[index]);
   }
   return this.newObj.cont;
