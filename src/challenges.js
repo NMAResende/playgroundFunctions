@@ -57,11 +57,11 @@ function highestCount(arrayNumbers) {
     if (maior <= arrayNumbers[index]) {
       if (maior === arrayNumbers[index]) {
         cont += 1;
-      } else {
-        maior = arrayNumbers[index];
-        cont = 0;
-        cont += 1;
+        continue;
       }
+      maior = arrayNumbers[index];
+      cont = 0;
+      cont += 1;
     }
   }
   return cont;
