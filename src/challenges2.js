@@ -65,10 +65,9 @@ function triangleCheck(lineA, lineB, lineC) {
   this.valorAbsB = Math.abs(lineA / lineC);
   this.valorAbsC = Math.abs(lineA / lineB);
   if (lineA < lineB + lineC && lineB < lineA + lineC && lineC < lineA + lineB) {
-    return testAbs(lineA, lineB, lineC, valorAbsA, valorAbsB, valorAbsC)
+    return testAbs(lineA, lineB, lineC, this.valorAbsA, this.valorAbsB, this.valorAbsC);
   }
   return false;
-
 }
 console.log(triangleCheck(10, 14, 8));
 console.log(triangleCheck(2, 3, 4));
