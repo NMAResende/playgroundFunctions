@@ -38,7 +38,8 @@ function generatePhoneNumber(arrayNumbers) {
   for (let i = 0; i < arrayNumbers.length; i += 1) {
     this.novoArray[i] = arrayNumbers[i];
   }
-  this.novoArray = this.novoArray.sort(function (a, b) { return a - b });
+  this.novoArray = this.novoArray
+    .sort(function (a, b) { return a - b });;
   this.numeroRepetido = this.novoArray[0];
   for (let i = 0; i < this.novoArray.length; i += 1) {
     if (repeatedNumbers(this.novoArray[i])) {
@@ -81,7 +82,7 @@ function hydrate(string) {
     sum += n1;
   }
   if (sum > 1) {
-    return `${sum} copo de água`;
+    return `${sum} copos de água`;
   }
   return `${sum} copo de água`;
 }
