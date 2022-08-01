@@ -26,11 +26,12 @@ function repeatedNumbers(num) {
   this.cont = 1;
   return false;
 }
-
 function ordenarLista() {
   return this.novoArray.sort(function (a, b) { return a - b; });
 }
-
+function MantendoArray(){
+  this.novoArray[i] = arrayNumbers[i];
+}
 function formatarTextoFinal(arrayNumbers) {
   arrayNumbers.splice(0, 0, '(');
   arrayNumbers.splice(3, 0, ')');
@@ -38,7 +39,6 @@ function formatarTextoFinal(arrayNumbers) {
   arrayNumbers.splice(10, 0, '-');
   return arrayNumbers.join('');
 }
-
 function generatePhoneNumber(arrayNumbers) {
   if (incorrectSize(arrayNumbers)) {
     return 'Array com tamanho incorreto.';
@@ -60,14 +60,13 @@ function generatePhoneNumber(arrayNumbers) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
-
   return formatarTextoFinal(arrayNumbers);
 }
 console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
 // Desafio 12
-function testAbs(lineA, lineB, lineC, valorAbsA, valorAbsB, valorAbsC) {
-  if (lineA > valorAbsA && lineB > valorAbsB && lineC > valorAbsC) {
+function testAbs(lineA, lineB, lineC) {
+  if (lineA > this.valorAbsA && lineB > this.valorAbsB && lineC > this.valorAbsC) {
     return true;
   }
 }
