@@ -16,10 +16,12 @@ function generatePhoneNumber(arrayNumbers) {
   novoArray = novoArray.sort(function (a, b) { return a - b });
   let numeroRepetido = novoArray[0];
   for (let i = 0; i < novoArray.length; i += 1) {
-    if (novoArray[i] === numeroRepetido) cont += 1;
+    if (novoArray[i] === numeroRepetido) {
+      cont += 1;
+    }
     if (cont > 2) {
       return 'não é possível gerar um número de telefone com esses valores';
-    } else {
+    } else if (novoArray[i] != numeroRepetido) {
       numeroRepetido = novoArray[i];
       cont = 1;
     }
@@ -35,12 +37,14 @@ console.log(generatePhoneNumber([0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4]));
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  let valorAbsA = Math.abs(lineB % lineB);
-  let valorAbsB = Math.abs(lineA % lineC);
-  let valorAbsC = Math.abs(lineA % lineB);
-  if (lineA < lineB + lineC || lineB < lineA + lineC || lineC < lineA + lineB && lineA > valorAbsA || lineB > valorAbsB || lineC > valorAbsC) {
+  let valorAbsA = Math.abs(lineB / lineC);
+  let valorAbsB = Math.abs(lineA / lineC);
+  let valorAbsC = Math.abs(lineA / lineB);
+  if (lineA < lineB + lineC && lineB < lineA + lineC && lineC < lineA + lineB){
+    if (lineA > valorAbsA && lineB > valorAbsB && lineC > valorAbsC) {
     return true;
   }
+}
   return false;
 }
 console.log(triangleCheck(10, 14, 8));
@@ -51,11 +55,15 @@ function hydrate(string) {
   let matches = string.match(/\d+/g);
   let sum = 0;
   for (let i = 0; i < matches.length; i += 1) {
-    let n1 = Number(matches[i].value);
-    sum = sum + Number[i];
+    let n1 = parseInt(matches[i]);
+    sum = sum + n1;
   }
-  return sum + ' copos de água';
+  if (sum > 1){
+    return sum + ' copos de água';
+  }else
+  return sum + ' copo de água';
 }
+console.log(hydrate('1 cerveja'));
 console.log(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho'));
 
 module.exports = {
