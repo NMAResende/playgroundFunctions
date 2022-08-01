@@ -1,6 +1,6 @@
 // Desafio 11
-function incorrectSize(arrayNumbers) {
-  if (arrayNumbers.length !== 11) {
+function incorrectSize(numbers) {
+  if (numbers.length !== 11) {
     return true;
   }
   return false;
@@ -19,11 +19,9 @@ function repeatedNumbers(num) {
     this.cont += 1;
     return false;
   }
-  else if (num !== this.numeroRepetido) {
-    this.numeroRepetido = num;
-    this.cont = 1;
-    return false;
-  }
+  this.numeroRepetido = num;
+  this.cont = 1;
+  return false;
 }
 
 function generatePhoneNumber(arrayNumbers) {
@@ -40,11 +38,12 @@ function generatePhoneNumber(arrayNumbers) {
   for (let i = 0; i < arrayNumbers.length; i += 1) {
     this.novoArray[i] = arrayNumbers[i];
   }
-  this.novoArray = novoArray.sort(function (a, b) { return a - b });
+  this.novoArray = this.novoArray.sort(function (a, b) { return a - b });
   this.numeroRepetido = this.novoArray[0];
   for (let i = 0; i < this.novoArray.length; i += 1) {
-    if (repeatedNumbers(this.novoArray[i]))
+    if (repeatedNumbers(this.novoArray[i])) {
       return 'não é possível gerar um número de telefone com esses valores';
+    }
   }
   arrayNumbers.splice(0, 0, '(');
   arrayNumbers.splice(3, 0, ')');
@@ -53,7 +52,7 @@ function generatePhoneNumber(arrayNumbers) {
   let texto = arrayNumbers.join('');
   return texto;
 }
-console.log(generatePhoneNumber([0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4]));
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
 // Desafio 12
 function testAbs(lineA, lineB, lineC, valorAbsA, valorAbsB, valorAbsC) {
