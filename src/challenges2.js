@@ -81,9 +81,9 @@ function hydrate(string) {
     sum += n1;
   }
   if (sum > 1) {
-    return sum + ' copos de água';
+    return `${sum} copo de água`;
   }
-  return sum + ' copo de água';
+  return `${sum} copo de água`;
 }
 console.log(hydrate('1 cerveja'));
 console.log(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho'));
