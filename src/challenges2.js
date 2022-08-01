@@ -12,36 +12,39 @@ function incorrectPhone(num) {
   return false;
 }
 function repeatedNumbers(num) {
-  if (num === this.numeroRepetido) {
-   this.cont += 1;
-  }
-  if (cont > 2) {
+  if (this.cont > 2) {
     return true;
-  } else if (num !== this.numeroRepetido) {
+  }
+  if (num === this.numeroRepetido) {
+    this.cont += 1;
+    return false;
+  }
+  else if (num !== this.numeroRepetido) {
     this.numeroRepetido = num;
     this.cont = 1;
     return false;
   }
 }
+
 function generatePhoneNumber(arrayNumbers) {
-  if(incorrectSize(arrayNumbers)){
-  return 'Array com tamanho incorreto.';
+  if (incorrectSize(arrayNumbers)) {
+    return 'Array com tamanho incorreto.';
   }
   for (let i = 0; i < arrayNumbers.length; i += 1) {
-    if(incorrectPhone(arrayNumbers[i])){
-    return 'não é possível gerar um número de telefone com esses valores';
+    if (incorrectPhone(arrayNumbers[i])) {
+      return 'não é possível gerar um número de telefone com esses valores';
     }
   }
   this.cont = 0;
   this.novoArray = [];
   for (let i = 0; i < arrayNumbers.length; i += 1) {
-    novoArray[i] = arrayNumbers[i];
+    this.novoArray[i] = arrayNumbers[i];
   }
-  novoArray = novoArray.sort(function (a, b) { return a - b });
-  numeroRepetido = novoArray[0];
-  for (let i = 0; i < novoArray.length; i += 1) {
-    if(repeatedNumbers(novoArray[i]))
-    return 'não é possível gerar um número de telefone com esses valores';
+  this.novoArray = novoArray.sort(function (a, b) { return a - b });
+  this.numeroRepetido = this.novoArray[0];
+  for (let i = 0; i < this.novoArray.length; i += 1) {
+    if (repeatedNumbers(this.novoArray[i]))
+      return 'não é possível gerar um número de telefone com esses valores';
   }
   arrayNumbers.splice(0, 0, '(');
   arrayNumbers.splice(3, 0, ')');
@@ -50,7 +53,7 @@ function generatePhoneNumber(arrayNumbers) {
   let texto = arrayNumbers.join('');
   return texto;
 }
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
+console.log(generatePhoneNumber([0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4]));
 
 // Desafio 12
 function testAbs(lineA, lineB, lineC, valorAbsA, valorAbsB, valorAbsC) {
