@@ -1,68 +1,39 @@
 // Desafio 11
-function incorrectSize(numbers) {
-  if (numbers.length !== 11) {
-    return true;
+function generatePhoneNumber(arrayNumbers) {
+  if (arrayNumbers.length !== 11) {
+  return 'Array com tamanho incorreto.';
   }
-  return false;
-}
-function incorrectPhone(num) {
-  if (num < 0 || num > 9) {
-    return true;
+  for (let i = 0; i < arrayNumbers.length; i += 1) {
+  if (arrayNumbers[i] < 0 || arrayNumbers[i] > 9) {
+  return 'não é possível gerar um número de telefone com esses valores';
   }
-  return false;
-}
-function repeatedNumbers(num) {
-  if (this.cont > 2) {
-    return true;
   }
-  if (num === this.numeroRepetido) {
-    this.cont += 1;
-    if (this.cont > 2) {
-      return true;
-    }
-    return false;
+  let cont = 0;
+  let novoArray = [];
+  for (let i = 0; i < arrayNumbers.length; i += 1) {
+  novoArray[i] = arrayNumbers[i];
   }
-  this.numeroRepetido = num;
-  this.cont = 1;
-  return false;
-}
-function ordenarLista() {
-  return this.novoArray.sort(function (a, b) { return a - b; });
-}
-function MantendoArray(){
-  this.novoArray[i] = arrayNumbers[i];
-}
-function formatarTextoFinal(arrayNumbers) {
+  novoArray = novoArray.sort(function (a, b) { return a - b });
+  let numeroRepetido = novoArray[0];
+  for (let i = 0; i < novoArray.length; i += 1) {
+  if (novoArray[i] === numeroRepetido) {
+  cont += 1;
+  }
+  if (cont > 2) {
+  return 'não é possível gerar um número de telefone com esses valores';
+  } else if (novoArray[i] !== numeroRepetido) {
+  numeroRepetido = novoArray[i];
+  cont = 1;
+  }
+  }
   arrayNumbers.splice(0, 0, '(');
   arrayNumbers.splice(3, 0, ')');
   arrayNumbers.splice(4, 0, ' ');
   arrayNumbers.splice(10, 0, '-');
-  return arrayNumbers.join('');
-}
-function generatePhoneNumber(arrayNumbers) {
-  if (incorrectSize(arrayNumbers)) {
-    return 'Array com tamanho incorreto.';
+  let texto = arrayNumbers.join('');
+  return texto;
   }
-  for (let i = 0; i < arrayNumbers.length; i += 1) {
-    if (incorrectPhone(arrayNumbers[i])) {
-      return 'não é possível gerar um número de telefone com esses valores';
-    }
-  }
-  this.cont = 0;
-  this.novoArray = [];
-  for (let i = 0; i < arrayNumbers.length; i += 1) {
-    this.novoArray[i] = arrayNumbers[i];
-  }
-  this.novoArray = ordenarLista();
-  this.numeroRepetido = this.novoArray[0];
-  for (let i = 0; i < this.novoArray.length; i += 1) {
-    if (repeatedNumbers(this.novoArray[i])) {
-      return 'não é possível gerar um número de telefone com esses valores';
-    }
-  }
-  return formatarTextoFinal(arrayNumbers);
-}
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
+  console.log(generatePhoneNumber([0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4]));
 
 // Desafio 12
 function testAbs(lineA, lineB, lineC) {
