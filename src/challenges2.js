@@ -28,8 +28,7 @@ function repeatedNumbers(num) {
 }
 
 function ordenarLista() {
-  return this.novoArray
-    .sort(function (a, b) { return a - b });
+  return this.novoArray.sort(function (a, b) { return a - b; });
 }
 
 function formatarTextoFinal(arrayNumbers) {
