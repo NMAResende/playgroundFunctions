@@ -17,11 +17,27 @@ function repeatedNumbers(num) {
   }
   if (num === this.numeroRepetido) {
     this.cont += 1;
+    if (this.cont > 2) {
+      return true;
+    }
     return false;
   }
   this.numeroRepetido = num;
   this.cont = 1;
   return false;
+}
+
+function ordenarLista() {
+  return this.novoArray
+    .sort(function (a, b) { return a - b });
+}
+
+function formatarTextoFinal(arrayNumbers) {
+  arrayNumbers.splice(0, 0, '(');
+  arrayNumbers.splice(3, 0, ')');
+  arrayNumbers.splice(4, 0, ' ');
+  arrayNumbers.splice(10, 0, '-');
+  return arrayNumbers.join('');
 }
 
 function generatePhoneNumber(arrayNumbers) {
@@ -38,20 +54,15 @@ function generatePhoneNumber(arrayNumbers) {
   for (let i = 0; i < arrayNumbers.length; i += 1) {
     this.novoArray[i] = arrayNumbers[i];
   }
-  this.novoArray = this.novoArray
-    .sort(function (a, b) { return a - b });;
+  this.novoArray = ordenarLista();
   this.numeroRepetido = this.novoArray[0];
   for (let i = 0; i < this.novoArray.length; i += 1) {
     if (repeatedNumbers(this.novoArray[i])) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
-  arrayNumbers.splice(0, 0, '(');
-  arrayNumbers.splice(3, 0, ')');
-  arrayNumbers.splice(4, 0, ' ');
-  arrayNumbers.splice(10, 0, '-');
-  let texto = arrayNumbers.join('');
-  return texto;
+
+  return formatarTextoFinal(arrayNumbers);
 }
 console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
